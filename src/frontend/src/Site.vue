@@ -63,6 +63,7 @@ header {
 	font-size: 24px;
 	position: absolute;
 	width: 100%;
+	z-index: 2;
 }
 #site-name {
 	color: white;

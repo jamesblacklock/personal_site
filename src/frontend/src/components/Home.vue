@@ -3,8 +3,8 @@
 		<div class="me"></div>
 		<p>
 			This is my personal site. I don't do social media, but I have a
-			<a href="http://github.com/jamesblacklock/">github</a>. The only thing interesting
-			on there at the time of writing is <a href="http://github.com/jamesblacklock/caesar">
+			<a href="http://github.com/jamesblacklock/" target="_blank">github</a>. The only thing interesting
+			on there at the time of writing is <a href="http://github.com/jamesblacklock/caesar" target="_blank">
 			Caesar</a>, a programming language I've created.
 		</p>
 	</div>
