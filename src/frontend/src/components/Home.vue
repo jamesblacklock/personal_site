@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="me"></div>
+		<img class="me" width="200" :src="require('../assets/me.jpg')">
 		<p>
 			This is my personal site. I don't do social media, but I have a
 			<a href="http://github.com/jamesblacklock/" target="_blank">github</a>. The only thing interesting
@@ -25,8 +25,5 @@ export default {
 	width: 200px;
 	height: 240px;
 	margin-right: 20px;
-	background: url('../assets/me.jpg');
-	background-size: cover;
-	background-position: center;
 }
 </style>
