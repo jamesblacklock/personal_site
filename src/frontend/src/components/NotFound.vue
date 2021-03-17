@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<p>invalid URL!</p>
-		<p><router-link to="/">let's go back home</router-link></p>
+		<p><router-link to="/">let's get the fuck outta here</router-link></p>
 	</div>
 </template>
 
