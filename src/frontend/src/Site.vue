@@ -1,6 +1,10 @@
 <template>
 	<div>
-		<header><router-link to="/">james blacklock</router-link></header>
+		<header>
+			<router-link id="site-name" to="/">
+				james blacklock
+			</router-link>
+		</header>
 		<div id="content">
 			<router-view></router-view>
 		</div>
@@ -34,14 +38,18 @@ header {
 	position: absolute;
 	width: 100%;
 }
-header a {
+#site-name {
 	color: white;
 	text-decoration: none;
+	border: 1px solid white;
+	padding: 1px 8px;
+	border-top-color: transparent;
+	border-right-color: transparent;
 }
-header a:visited {
+#site-name a:visited {
 	color: white;
 }
-header a:hover {
+#site-name a:hover {
 	color: #e9e9e9;
 }
 a {
