@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<img style="float:left;width:200px;margin-right:20px" :src="require('../assets/me.jpg')">
+		<div class="me"></div>
 		<p>
 			This is my personal site. I don't do social media, but I have a
 			<a href="http://github.com/jamesblacklock/">github</a>. The only thing interesting
@@ -20,15 +20,13 @@ export default {
 </script>
 
 <style scoped>
-/* h3 {
-	margin: 40px 0 0;
+.me {
+	float: left;
+	width: 200px;
+	height: 240px;
+	margin-right: 20px;
+	background: url('../assets/me.jpg');
+	background-size: cover;
+	background-position: center;
 }
-ul {
-	list-style-type: none;
-	padding: 0;
-}
-li {
-	display: inline-block;
-	margin: 0 10px;
-} */
 </style>
