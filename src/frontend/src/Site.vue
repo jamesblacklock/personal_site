@@ -4,7 +4,12 @@
 			class="dot"
 			v-for="dot in dots"
 			:key="dot.key"
-			:style="{ width: dot.size, height: dot.size, left: dot.left, top: dot.top }">
+			:style="{
+				width: `${dot.size}vw`,
+				height: `${dot.size}vw`,
+				left: `${dot.left}vw`,
+				top: `${dot.top}vh`
+			}">
 		</div>
 		<header>
 			<router-link id="site-name" to="/">
@@ -18,25 +23,42 @@
 </template>
 
 <script>
-const dots = [];
-
-for(let i=0; i<260; i++) {
-	let size = Math.floor(Math.random() * 14);
-	// size *= size;
-	size = 1/size*5;
-	dots.push({
-		key: i,
-		size: `${size}vw`,
-		left: `${Math.floor(Math.random() * 100) - size}vw`,
-		top: `${Math.floor(Math.random() * 100) - size}vh`,
-	});
-}
-
 export default {
 	name: 'Site',
-	data: () => ({
-		dots
-	})
+	data: () => {
+		const dots = [];
+
+		for(let i=0; i<260; i++) {
+			let size = Math.floor(Math.random() * 14);
+			size = 1/size*5;
+			dots.push({
+				key: i,
+				size: size,
+				left: Math.floor(Math.random() * 100) - size,
+				top: Math.floor(Math.random() * 100) - size,
+			});
+		}
+		
+		return { dots };
+	},
+	mounted() {
+		setInterval(this.positionDots.bind(this), 1200);  
+	},
+	methods: {
+		positionDots() {
+			for(let dot of this.dots) {
+				if(Math.floor(Math.random() * 14) == 0) {
+					let size = Math.floor(Math.random() * 14);
+					dot.size = 1/size*5;
+					dot.left = Math.floor(Math.random() * 100) - dot.size;
+					dot.top = Math.floor(Math.random() * 100) - dot.size;
+				}
+			}
+
+			this.dots.push(null);
+			this.dots.pop()
+		}
+	}
 }
 </script>
 
@@ -86,8 +108,10 @@ a:visited {
 	color: #ce6824;
 }
 .dot {
-	position: absolute;
+	position: fixed;
 	background: #f3f3f3;
 	border-radius: 50%;
+	transition-timing-function: ease-in-out;
+	transition: left 14s, top 14s, width 8s, height 8s;
 }
 </style>

@@ -1,10 +1,9 @@
 module.exports = {
     chainWebpack: config => {
-        config
-            .plugin('html')
-            .tap(args => {
-                args[0].title = "james blacklock";
-                return args;
-            })
+        config.plugin('html').tap(args => {
+            args[0].title = "james blacklock";
+            return args;
+        });
+        config.devtool('source-map');
     }
 }
